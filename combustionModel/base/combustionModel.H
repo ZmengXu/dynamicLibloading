@@ -34,7 +34,7 @@ class combustionModelBase
                 std::cout << "Try to insert " << lookup 
                 << " into the WordConstructorTablePtr_"
                 << std::endl;
-                if (!WordConstructorTablePtr_->insert(lookup, debug))
+                if (!WordConstructorTablePtr_->insert(lookup, Type::debug))
                 {
                     std::cerr<< "Duplicate entry "
                         << lookup << " in runtime selection table "

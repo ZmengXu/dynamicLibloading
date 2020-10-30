@@ -4,4 +4,6 @@ cd ${0%/*} || exit 1    # Run from this directory
 wclean combustionModel
 wclean solverFoam
 wclean PaSR
+rm -f $FOAM_USER_LIBBIN/libPaSR.so
+rm -f $FOAM_USER_LIBBIN/libcombustModel.so
 rm -rf log*
