@@ -7,7 +7,7 @@
 using namespace Foam;
 
 // define a function pointer type
-typedef void (*funcType)(void);
+typedef char* (*funcType)(void);
 
 int main(int argc, char *argv[])
 {
@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
 
         funcType funcPtr = (funcType)voidPtr;
 
-        funcPtr();
+        Info << funcPtr() << endl;
 
         dlclose(libhandle);
     }
@@ -39,6 +39,8 @@ int main(int argc, char *argv[])
     {
         Info << librarypath << " is not found." << endl;
     }
+
+    Info << "End." << endl;
 
     return 0;
 }

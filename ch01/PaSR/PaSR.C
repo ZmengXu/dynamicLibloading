@@ -1,7 +1,4 @@
-#include "word.H"
-#include "IOstreams.H"
-using namespace Foam;
-void get_library_name(void)
+char* get_library_name(void)
 {
-    Info << "\nThis is PaSR\n";
+    return "This is PaSR";
 }
