@@ -4,6 +4,14 @@ cd ${0%/*} || exit 1    # Run from this directory
 # Parse arguments for library compilation
 . $WM_PROJECT_DIR/bin/tools/RunFunctions
 
+cd ch01
+wmake WSR
+wmake PaSR
+wmake solverFoam
+runApplication -s 1 solverFoam "libWSR.so"
+runApplication -s 2 solverFoam "libPaSR.so"
+
+cd ../ch02
 wmake combustionModel
 wmake solverFoam
 runApplication -s 1 solverFoam "WSR"

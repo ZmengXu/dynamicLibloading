@@ -1,9 +1,20 @@
 #!/bin/sh
 cd ${0%/*} || exit 1    # Run from this directory
 
+cd ch01
+wclean WSR
+wclean PaSR
+wclean solverFoam
+rm -f $FOAM_USER_LIBBIN/libWSR.so
+rm -f $FOAM_USER_LIBBIN/libPaSR.so
+rm -f $FOAM_USER_APPBIN/solverFoam
+rm -rf log*
+
+cd ../ch02
 wclean combustionModel
 wclean solverFoam
 wclean PaSR
 rm -f $FOAM_USER_LIBBIN/libPaSR.so
 rm -f $FOAM_USER_LIBBIN/libcombustModel.so
+rm -f $FOAM_USER_APPBIN/solverFoam
 rm -rf log*
